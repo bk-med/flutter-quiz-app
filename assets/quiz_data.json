@@ -1,0 +1,102 @@
+[
+  {
+    "question": "Quelle est la méthode JavaScript utilisée pour vérifier si un élément est présent dans un tableau ?",
+    "options": ["hasElement()", "contains()", "includes()", "exists()"],
+    "correctIndex": 2
+  },
+  {
+    "question": "Quelle fonction JavaScript est utilisée pour arrondir un nombre à l'entier le plus proche ?",
+    "options": ["round()", "floor()", "ceil()", "trunc()"],
+    "correctIndex": 0
+  },
+  {
+    "question": "JavaScript est un langage de programmation côté serveur.",
+    "options": ["Vrai", "Faux"],
+    "correctIndex": 1
+  },
+  {
+    "question": "Quelle est la méthode JavaScript utilisée pour remplacer une partie d'une chaîne de caractères ?",
+    "options": ["replace()", "swap()", "change()", "substitute()"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Le symbole '&&' en JavaScript représente l'opérateur OU logique.",
+    "options": ["Vrai", "Faux"],
+    "correctIndex": 1
+  },
+  {
+    "question": "Quelle est la méthode JavaScript utilisée pour inverser l'ordre des éléments d'un tableau ?",
+    "options": ["reverse()", "flip()", "invert()", "changeOrder()"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Un tableau en JavaScript peut stocker des éléments de différents types de données.",
+    "options": ["Vrai", "Faux"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Quelle fonction JavaScript est utilisée pour générer un nombre aléatoire entre 0 et 1 ?",
+    "options": ["random()", "generateRandom()", "getRandom()", "rand()"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Les événements en JavaScript peuvent être déclenchés par des actions de l'utilisateur.",
+    "options": ["Vrai", "Faux"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Quelle est la méthode JavaScript utilisée pour convertir un nombre en chaîne de caractères ?",
+    "options": ["toString()", "convertToString()", "numberToString()", "stringify()"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Quelle est la méthode JavaScript utilisée pour vérifier si un objet est un tableau ?",
+    "options": ["isArray()", "isList()", "checkArray()", "listCheck()"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Quelle est la méthode JavaScript utilisée pour récupérer la sous-chaîne d'une chaîne de caractères ?",
+    "options": ["substring()", "slice()", "cut()", "extract()"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Les cookies en JavaScript sont utilisés pour stocker des informations sur le serveur.",
+    "options": ["Vrai", "Faux"],
+    "correctIndex": 1
+  },
+  {
+    "question": "Quelle fonction JavaScript est utilisée pour vérifier si une variable est nulle ou non définie ?",
+    "options": ["isNull()", "isUndefined()", "checkUndefined()", "isNullOrUndefined()"],
+    "correctIndex": 3
+  },
+  {
+    "question": "Le symbole '&&' en JavaScript représente l'opérateur OU logique.",
+    "options": ["Vrai", "Faux"],
+    "correctIndex": 1
+  },
+  {
+    "question": "Quelle fonction JavaScript est utilisée pour obtenir la valeur absolue d'un nombre ?",
+    "options": ["abs()", "absolute()", "getAbsolute()", "absoluteValue()"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Le HTML est un langage de programmation de script côté client.",
+    "options": ["Vrai", "Faux"],
+    "correctIndex": 1
+  },
+  {
+    "question": "Quelle est la méthode JavaScript utilisée pour obtenir le dernier élément d'un tableau sans le supprimer ?",
+    "options": ["last()", "getLast()", "peek()", "tail()"],
+    "correctIndex": 2
+  },
+  {
+    "question": "Quelle est la méthode JavaScript utilisée pour générer un nombre aléatoire dans une plage donnée ?",
+    "options": ["randomRange()", "getRandomInRange()", "generateRandomInRange()", "randRange()"],
+    "correctIndex": 1
+  }, 
+  {
+    "question": "Quelle fonction JavaScript est utilisée pour arrondir un nombre à l'entier le plus proche ?",
+    "options": ["round()", "floor()", "ceil()", "trunc()"],
+    "correctIndex": 0
+  }
+]
