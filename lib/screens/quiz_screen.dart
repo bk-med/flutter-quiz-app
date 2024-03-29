@@ -74,14 +74,14 @@ class _QuizScreenState extends State<QuizScreen> {
       if (correctAnswer) {
         setState(() {
           points++;
-          optionsBackgroundColor[selectedIndex] = Colors.green;
+          optionsBackgroundColor[selectedIndex] = const Color(0xFF4b7c7a);
           selectedOptionsColor[selectedIndex] = Colors.white;
         });
       } else {
         setState(() {
           optionsBackgroundColor[selectedIndex] = Colors.red;
           optionsBackgroundColor[value[currentQuestionIndex].correctIndex] =
-              Colors.green;
+              const Color(0xFF4b7c7a);
           selectedOptionsColor[selectedIndex] = Colors.white;
           selectedOptionsColor[value[currentQuestionIndex].correctIndex] =
               Colors.white;
