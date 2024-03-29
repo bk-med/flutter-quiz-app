@@ -3,15 +3,5 @@
     "question": "Quelle est la méthode JavaScript utilisée pour vérifier si un élément est présent dans un tableau ?",
     "options": ["hasElement()", "contains()", "includes()", "exists()"],
     "correctIndex": 2
-  },
-  {
-    "question": "Quelle fonction JavaScript est utilisée pour arrondir un nombre à l'entier le plus proche ?",
-    "options": ["round()", "floor()", "ceil()", "trunc()"],
-    "correctIndex": 0
-  },
-  {
-    "question": "JavaScript est un langage de programmation côté serveur.",
-    "options": ["Vrai", "Faux"],
-    "correctIndex": 1
   }
 ]

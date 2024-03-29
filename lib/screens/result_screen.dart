@@ -44,75 +44,94 @@ class ResultScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Résultat')),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'Résultat du Quiz',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 40),
-            RatingBarIndicator(
-              rating: rating,
-              itemBuilder: (context, index) => const Icon(
-                Icons.star,
-                color: Colors.amber,
-              ),
-              itemCount: 5,
-              itemSize: 50.0,
-              direction: Axis.horizontal,
-            ),
-            const Text(
-              "Votre score est",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Text("$score",
-                  style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                    color: scoreColor,
-                  )),
-              Text("/$totalQuestions",
-                  style: const TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                  ))
-            ]),
-            const SizedBox(height: 20),
-            Text(
-              message,
-              textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 18),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomeScreen()),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blue, // Couleur de fond du bouton blanc
-                foregroundColor:
-                    Colors.white, // Couleur du texte du bouton bleu
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-              ),
-              child: const Text(
-                'Retour à l\'accueil',
-                style: TextStyle(fontSize: 20),
-              ),
-            ),
-          ],
+        appBar: AppBar(
+          backgroundColor: const Color(0xFF4b7c7a),
+          toolbarHeight: 10,
         ),
-      ),
-    );
+        body: Container(
+            color: const Color(0xFF4b7c7a),
+            child: Container(
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(240.0),
+                  topRight: Radius.circular(240.0),
+                  bottomLeft:
+                      Radius.zero, // Set zero radius for the bottom left
+                  bottomRight:
+                      Radius.zero, // Set zero radius for the bottom right
+                ),
+              ),
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      'Résultat du Quiz',
+                      style:
+                          TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 40),
+                    RatingBarIndicator(
+                      rating: rating,
+                      itemBuilder: (context, index) => const Icon(
+                        Icons.star,
+                        color: Colors.amber,
+                      ),
+                      itemCount: 5,
+                      itemSize: 50.0,
+                      direction: Axis.horizontal,
+                    ),
+                    const Text(
+                      "Votre score est",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      Text("$score",
+                          style: TextStyle(
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold,
+                            color: scoreColor,
+                          )),
+                      Text("/$totalQuestions",
+                          style: const TextStyle(
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold,
+                          ))
+                    ]),
+                    const SizedBox(height: 20),
+                    Text(
+                      message,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(fontSize: 18),
+                    ),
+                    const SizedBox(height: 20),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => HomeScreen()),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(
+                            0xFF4b7c7a), // Couleur de fond du bouton blanc
+                        foregroundColor:
+                            Colors.white, // Couleur du texte du bouton bleu
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 40, vertical: 20),
+                      ),
+                      child: const Text(
+                        'Retour à l\'accueil',
+                        style: TextStyle(fontSize: 20),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )));
   }
 }
