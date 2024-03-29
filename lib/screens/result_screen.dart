@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:quiz_app/screens/home_screen.dart';
 
 class ResultScreen extends StatelessWidget {
   final int? score;
@@ -13,52 +15,100 @@ class ResultScreen extends StatelessWidget {
         score != null && totalQuestions != null && totalQuestions! > 0
             ? (score! / totalQuestions!) * 100
             : 0.0;
+    double rating =
+        score != null && totalQuestions != null && totalQuestions! > 0
+            ? (score! / totalQuestions!) * 5
+            : 0.0;
 
     // Déterminer le message basé sur le pourcentage
     String message;
-    Color messageColor;
+    Color scoreColor;
     if (percentage >= 80) {
-      message =
-          'Félicitations ! Vous avez réussi le quiz avec un excellent score de $score/$totalQuestions!';
-      messageColor = Colors.green;
-    } else if (percentage >= 50) {
-      message =
-          'Bravo ! Vous avez réussi le quiz avec un score de $score/$totalQuestions.';
-      messageColor = Colors.orange;
+      message = 'Excellent ! Vous avez bien travaillé !';
+    } else if (percentage >= 60) {
+      message = 'Bon travail !';
+    } else if (percentage >= 40) {
+      message = "Pas mal, continuez comme ça !";
+    } else if (percentage >= 20) {
+      message = 'Vous pouvez faire mieux !';
     } else {
-      message =
-          'Dommage, votre score est de $score/$totalQuestions. Continuez à vous entraîner !';
-      messageColor = Colors.red;
+      message = 'Vous devez travailler encore !';
+    }
+
+    if (percentage > 75) {
+      scoreColor = Colors.green;
+    } else if (percentage > 50) {
+      scoreColor = Colors.orange;
+    } else {
+      scoreColor = Colors.red;
     }
 
     return Scaffold(
-      appBar: AppBar(title: Text('Résultat')),
+      appBar: AppBar(title: const Text('Résultat')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'Résultat du Quiz',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 40),
+            RatingBarIndicator(
+              rating: rating,
+              itemBuilder: (context, index) => const Icon(
+                Icons.star,
+                color: Colors.amber,
+              ),
+              itemCount: 5,
+              itemSize: 50.0,
+              direction: Axis.horizontal,
+            ),
+            const Text(
+              "Votre score est",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Text("$score",
+                  style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                    color: scoreColor,
+                  )),
+              Text("/$totalQuestions",
+                  style: const TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                  ))
+            ]),
+            const SizedBox(height: 20),
             Text(
               message,
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 18, color: messageColor),
+              style: const TextStyle(fontSize: 18),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                Navigator.pop(context); // Retour à l'écran précédent
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomeScreen()),
+                );
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.blue, // Couleur de fond du bouton
-                textStyle: TextStyle(fontSize: 16), // Style du texte
-                padding: EdgeInsets.symmetric(
-                    horizontal: 20, vertical: 10), // Padding du bouton
+                backgroundColor: Colors.blue, // Couleur de fond du bouton blanc
+                foregroundColor:
+                    Colors.white, // Couleur du texte du bouton bleu
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
               ),
-              child: Text('Rejouer'),
+              child: const Text(
+                'Retour à l\'accueil',
+                style: TextStyle(fontSize: 20),
+              ),
             ),
           ],
         ),
