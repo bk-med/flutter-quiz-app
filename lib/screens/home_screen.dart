@@ -5,27 +5,47 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Quiz App')),
       body: Container(
         width: double.infinity, // Largeur de 100% de l'écran
         height: double.infinity, // Hauteur de 100% de l'écran
-        decoration: BoxDecoration(
-          color: Colors.blue, // Couleur de fond bleue
-        ),
+        // change body background color
+        color: Color(0xFF4b7c7a),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/ideas.png',
-              width: 200,
+            Stack(
+              children: [
+                Container(
+                    width: 120, // Adjust as needed
+                    height: 120, // Adjust as needed
+                    decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.white, // Change color as needed
+                    ),
+                    child: const Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text('Quiz',
+                              style: TextStyle(
+                                fontSize: 26,
+                                fontFamily: 'Raleway',
+                                fontWeight: FontWeight.w600,
+                                color: Color(0xFF4b7c7a),
+                              )),
+                          Text('App',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Color(0xFFf8c660),
+                              )),
+                        ],
+                      ),
+                    ))
+              ],
             ),
-            SizedBox(height: 20),
-            Text(
-              'Bienvenue au Quiz',
-              style: TextStyle(fontSize: 24, color: Colors.white),
-            ),
-            SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -34,12 +54,12 @@ class HomeScreen extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor:
-                    Colors.white, // Couleur de fond du bouton blanc
-                foregroundColor: Colors.blue, // Couleur du texte du bouton bleu
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                backgroundColor: const Color(0xFFf8c660),
+                foregroundColor: Colors.white,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
               ),
-              child: Text(
+              child: const Text(
                 'Commencer le Quiz',
                 style: TextStyle(fontSize: 20),
               ),
