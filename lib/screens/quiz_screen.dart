@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:quiz_app/models/question.dart';
 import 'package:quiz_app/services/quiz_service.dart';
 import 'package:quiz_app/screens/result_screen.dart';
@@ -12,7 +13,7 @@ class QuizScreen extends StatefulWidget {
 class _QuizScreenState extends State<QuizScreen> {
   late Future<List<Question>> questions;
   int currentQuestionIndex = 0;
-  int numberOfQuestions = 0;
+  int numberOfQuestions = 20;
   int seconds = 30;
   late Timer timer;
   late List<Color> optionsBackgroundColor;
@@ -116,40 +117,21 @@ class _QuizScreenState extends State<QuizScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Quiz')),
+      appBar: AppBar(
+        title: Text(
+          '${currentQuestionIndex + 1}/${numberOfQuestions}',
+          style: const TextStyle(
+              fontSize: 18,
+              color: Color(0xFF4b7c7a),
+              fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
+      ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.fromLTRB(20, 40, 20, 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text(
-                    'Question ${currentQuestionIndex + 1}/${numberOfQuestions}',
-                  ),
-                  Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      SizedBox(
-                        width: 60,
-                        height: 60,
-                        child: CircularProgressIndicator(
-                          value: seconds / 30,
-                          valueColor: const AlwaysStoppedAnimation(Colors.blue),
-                          backgroundColor: Colors.grey,
-                          strokeWidth: 5,
-                        ),
-                      ),
-                      Text(
-                        '$seconds',
-                        style: const TextStyle(fontSize: 20),
-                      ),
-                    ],
-                  ),
-                ]),
-            const SizedBox(height: 20.0),
             Expanded(
               child: SingleChildScrollView(
                 child: FutureBuilder<List<Question>>(
@@ -166,10 +148,61 @@ class _QuizScreenState extends State<QuizScreen> {
                         return Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
-                            const SizedBox(height: 10.0),
-                            Text(
-                              data[currentQuestionIndex].question,
-                              style: const TextStyle(fontSize: 20.0),
+                            const SizedBox(height: 0.0),
+                            Stack(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(10),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.grey.withOpacity(0.2),
+                                          spreadRadius: 2,
+                                          blurRadius: 2,
+                                          offset: const Offset(0, 2),
+                                        ),
+                                      ]),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(10, 50, 10, 70),
+                                  child: Text(
+                                    data[currentQuestionIndex].question,
+                                    style: const TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                ),
+                                Positioned(
+                                  top: 0,
+                                  left: 200,
+                                  child: Transform.translate(
+                                    offset: const Offset(0, -30),
+                                    child: Stack(
+                                      alignment: Alignment.center,
+                                      children: [
+                                        Container(
+                                          width: 60,
+                                          height: 60,
+                                          color: Colors.white,
+                                          child: CircularProgressIndicator(
+                                            value: seconds / 30,
+                                            valueColor:
+                                                const AlwaysStoppedAnimation(
+                                                    Color(0xFF4b7c7a)),
+                                            backgroundColor:
+                                                const Color(0xFFABD1C6),
+                                            strokeWidth: 5,
+                                          ),
+                                        ),
+                                        Text(
+                                          '$seconds',
+                                          style: const TextStyle(fontSize: 20),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                )
+                              ],
                             ),
                             const SizedBox(height: 20.0),
                             ...List.generate(
@@ -187,9 +220,9 @@ class _QuizScreenState extends State<QuizScreen> {
                                       borderRadius: BorderRadius.circular(10),
                                       boxShadow: [
                                         BoxShadow(
-                                          color: Colors.grey.withOpacity(0.5),
+                                          color: Colors.grey.withOpacity(0.2),
                                           spreadRadius: 2,
-                                          blurRadius: 4,
+                                          blurRadius: 2,
                                           offset: const Offset(0, 2),
                                         ),
                                       ]),
