@@ -45,11 +45,11 @@ class ResultScreen extends StatelessWidget {
 
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color(0xFF4b7c7a),
+          backgroundColor: Colors.blue[400],
           toolbarHeight: 10,
         ),
         body: Container(
-            color: const Color(0xFF4b7c7a),
+            color: Colors.blue[400],
             child: Container(
               decoration: const BoxDecoration(
                 color: Colors.white,
@@ -117,8 +117,8 @@ class ResultScreen extends StatelessWidget {
                         );
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(
-                            0xFF4b7c7a), // Couleur de fond du bouton blanc
+                        backgroundColor:
+                            Colors.blue[400], // Couleur de fond du bouton blanc
                         foregroundColor:
                             Colors.white, // Couleur du texte du bouton bleu
                         padding: const EdgeInsets.symmetric(

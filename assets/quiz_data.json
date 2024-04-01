@@ -10,93 +10,93 @@
     "correctIndex": 0
   },
   {
-    "question": "JavaScript est un langage de programmation côté serveur.",
-    "options": ["Vrai", "Faux"],
+    "question": "Quelle méthode JavaScript est utilisée pour concaténer deux tableaux ?",
+    "options": ["concat()", "merge()", "combine()", "joinArrays()"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Quelle fonction JavaScript est utilisée pour obtenir la longueur d'une chaîne de caractères ?",
+    "options": ["size()", "length()", "count()", "strlen()"],
     "correctIndex": 1
   },
   {
-    "question": "Quelle est la méthode JavaScript utilisée pour remplacer une partie d'une chaîne de caractères ?",
-    "options": ["replace()", "swap()", "change()", "substitute()"],
-    "correctIndex": 0
-  },
-  {
-    "question": "Le symbole '&&' en JavaScript représente l'opérateur OU logique.",
-    "options": ["Vrai", "Faux"],
-    "correctIndex": 1
-  },
-  {
-    "question": "Quelle est la méthode JavaScript utilisée pour inverser l'ordre des éléments d'un tableau ?",
-    "options": ["reverse()", "flip()", "invert()", "changeOrder()"],
-    "correctIndex": 0
-  },
-  {
-    "question": "Un tableau en JavaScript peut stocker des éléments de différents types de données.",
+    "question": "JavaScript utilise-t-il la notation camelCase pour nommer les variables ?",
     "options": ["Vrai", "Faux"],
     "correctIndex": 0
   },
   {
-    "question": "Quelle fonction JavaScript est utilisée pour générer un nombre aléatoire entre 0 et 1 ?",
-    "options": ["random()", "generateRandom()", "getRandom()", "rand()"],
+    "question": "Quelle méthode JavaScript est utilisée pour transformer une chaîne de caractères en majuscules ?",
+    "options": ["toUpperCase()", "upper()", "capitalize()", "upperCase()"],
     "correctIndex": 0
   },
   {
-    "question": "Les événements en JavaScript peuvent être déclenchés par des actions de l'utilisateur.",
-    "options": ["Vrai", "Faux"],
-    "correctIndex": 0
-  },
-  {
-    "question": "Quelle est la méthode JavaScript utilisée pour convertir un nombre en chaîne de caractères ?",
-    "options": ["toString()", "convertToString()", "numberToString()", "stringify()"],
-    "correctIndex": 0
-  },
-  {
-    "question": "Quelle est la méthode JavaScript utilisée pour vérifier si un objet est un tableau ?",
-    "options": ["isArray()", "isList()", "checkArray()", "listCheck()"],
-    "correctIndex": 0
-  },
-  {
-    "question": "Quelle est la méthode JavaScript utilisée pour récupérer la sous-chaîne d'une chaîne de caractères ?",
-    "options": ["substring()", "slice()", "cut()", "extract()"],
-    "correctIndex": 0
-  },
-  {
-    "question": "Les cookies en JavaScript sont utilisés pour stocker des informations sur le serveur.",
-    "options": ["Vrai", "Faux"],
-    "correctIndex": 1
-  },
-  {
-    "question": "Quelle fonction JavaScript est utilisée pour vérifier si une variable est nulle ou non définie ?",
-    "options": ["isNull()", "isUndefined()", "checkUndefined()", "isNullOrUndefined()"],
+    "question": "Quelle boucle JavaScript est utilisée pour parcourir les propriétés d'un objet ?",
+    "options": ["for loop", "forEach loop", "while loop", "for...in loop"],
     "correctIndex": 3
   },
   {
-    "question": "Le symbole '&&' en JavaScript représente l'opérateur OU logique.",
-    "options": ["Vrai", "Faux"],
+    "question": "Quel opérateur JavaScript est utilisé pour vérifier l'égalité stricte sans conversion de type ?",
+    "options": ["==", "===", "=", "!="],
     "correctIndex": 1
   },
   {
-    "question": "Quelle fonction JavaScript est utilisée pour obtenir la valeur absolue d'un nombre ?",
-    "options": ["abs()", "absolute()", "getAbsolute()", "absoluteValue()"],
+    "question": "Quelle fonction JavaScript est utilisée pour supprimer le dernier élément d'un tableau ?",
+    "options": ["removeLast()", "pop()", "deleteLast()", "slice()"],
+    "correctIndex": 1
+  },
+  {
+    "question": "Quelle fonction JavaScript est utilisée pour transformer une chaîne de caractères en minuscules ?",
+    "options": ["toLowerCase()", "lower()", "lowercase()", "lowerCase()"],
     "correctIndex": 0
   },
   {
-    "question": "Le HTML est un langage de programmation de script côté client.",
-    "options": ["Vrai", "Faux"],
-    "correctIndex": 1
+    "question": "JavaScript prend-il en charge la programmation orientée objet ?",
+    "options": ["Oui", "Non"],
+    "correctIndex": 0
   },
   {
-    "question": "Quelle est la méthode JavaScript utilisée pour obtenir le dernier élément d'un tableau sans le supprimer ?",
-    "options": ["last()", "getLast()", "peek()", "tail()"],
+    "question": "Quelle méthode JavaScript est utilisée pour ajouter un élément à la fin d'un tableau ?",
+    "options": ["push()", "append()", "insert()", "add()"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Quelle fonction JavaScript est utilisée pour convertir une chaîne de caractères en nombre ?",
+    "options": ["toNumber()", "parseNumber()", "parseInt()", "convertToNumber()"],
     "correctIndex": 2
   },
   {
-    "question": "Quelle est la méthode JavaScript utilisée pour générer un nombre aléatoire dans une plage donnée ?",
-    "options": ["randomRange()", "getRandomInRange()", "generateRandomInRange()", "randRange()"],
-    "correctIndex": 1
-  }, 
-  {
-    "question": "Quelle fonction JavaScript est utilisée pour arrondir un nombre à l'entier le plus proche ?",
-    "options": ["round()", "floor()", "ceil()", "trunc()"],
+    "question": "Quelle boucle JavaScript est utilisée pour parcourir les éléments d'un tableau ?",
+    "options": ["for loop", "forEach loop", "while loop", "for...in loop"],
     "correctIndex": 0
+  },
+  {
+    "question": "Quel opérateur JavaScript est utilisé pour concaténer des chaînes de caractères ?",
+    "options": ["+", "&", "|", "++"],
+    "correctIndex": 0
+  },
+  {
+    "question": "JavaScript prend-il en charge la manipulation du DOM ?",
+    "options": ["Oui", "Non"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Quelle méthode JavaScript est utilisée pour ajouter un élément au début d'un tableau ?",
+    "options": ["unshift()", "prepend()", "insertFirst()", "addFirst()"],
+    "correctIndex": 0
+  },
+  {
+    "question": "Quelle fonction JavaScript est utilisée pour obtenir la partie entière d'un nombre décimal ?",
+    "options": ["integer()", "trunc()", "whole()", "part()"],
+    "correctIndex": 1
+  },
+  {
+    "question": "Quelle est la différence entre 'let' et 'var' en JavaScript en termes de portée de variable ?",
+    "options": ["Il n'y a pas de différence.", "'let' a une portée de bloc, tandis que 'var' a une portée de fonction.", "'var' a une portée de bloc, tandis que 'let' a une portée de fonction.", "'let' crée des variables globales, tandis que 'var' crée des variables locales."],
+    "correctIndex": 1
+  },
+  {
+    "question": "Quelle est la fonctionnalité de l'opérateur '...rest' dans JavaScript ?",
+    "options": ["Il permet de définir une variable qui recueille tous les arguments d'une fonction dans un tableau.", "Il permet de définir une variable qui recueille tous les arguments restants d'une fonction dans un objet.", "Il permet de définir une variable qui recueille tous les arguments restants d'une fonction dans un tableau.", "Il permet de définir une variable qui recueille tous les arguments d'une fonction dans un objet."],
+    "correctIndex": 2
   }
 ]

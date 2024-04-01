@@ -9,17 +9,18 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  flutter_countdown_timer: ^4.1.0    
+  flutter_countdown_timer: ^4.1.0
   flutter_rating_bar: ^4.0.1
+  audioplayers: ^6.0.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-    
 
 flutter:
   assets:
-    - assets/quiz_data.json 
+    - assets/quiz_data.json
     - assets/ideas.png
+    - assets/success_sound.mp3
+    - assets/wrong_sound.mp3
   uses-material-design: true
-

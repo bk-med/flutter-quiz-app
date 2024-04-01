@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
         width: double.infinity, // Largeur de 100% de l'écran
         height: double.infinity, // Hauteur de 100% de l'écran
         // change body background color
-        color: Color(0xFF4b7c7a),
+        color: Colors.blue[400],
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
                       shape: BoxShape.circle,
                       color: Colors.white, // Change color as needed
                     ),
-                    child: const Center(
+                    child: Center(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         mainAxisSize: MainAxisSize.min,
@@ -34,9 +34,9 @@ class HomeScreen extends StatelessWidget {
                                 fontSize: 26,
                                 fontFamily: 'Raleway',
                                 fontWeight: FontWeight.w600,
-                                color: Color(0xFF4b7c7a),
+                                color: Colors.blue[400],
                               )),
-                          Text('App',
+                          const Text('App',
                               style: TextStyle(
                                 fontSize: 16,
                                 color: Color(0xFFf8c660),

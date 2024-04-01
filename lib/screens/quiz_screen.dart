@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:quiz_app/models/question.dart';
 import 'package:quiz_app/services/quiz_service.dart';
 import 'package:quiz_app/screens/result_screen.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class QuizScreen extends StatefulWidget {
   @override
@@ -20,6 +20,8 @@ class _QuizScreenState extends State<QuizScreen> {
   late List<Color> selectedOptionsColor;
   int points = 0;
   bool isLoaded = false;
+
+  AudioPlayer _audioPlayer = AudioPlayer();
 
   @override
   void initState() {
@@ -67,6 +69,14 @@ class _QuizScreenState extends State<QuizScreen> {
     });
   }
 
+  void playSuccessSound() async {
+    await _audioPlayer.play(AssetSource('success_sound.mp3'));
+  }
+
+  void playWrongSound() async {
+    await _audioPlayer.play(AssetSource('wrong_sound.mp3'));
+  }
+
   void checkAnswer(int selectedIndex) {
     questions.then((value) {
       bool correctAnswer =
@@ -74,20 +84,22 @@ class _QuizScreenState extends State<QuizScreen> {
       if (correctAnswer) {
         setState(() {
           points++;
-          optionsBackgroundColor[selectedIndex] = const Color(0xFF4b7c7a);
+          optionsBackgroundColor[selectedIndex] = Colors.blue[400]!;
           selectedOptionsColor[selectedIndex] = Colors.white;
         });
+        playSuccessSound();
       } else {
         setState(() {
           optionsBackgroundColor[selectedIndex] = Colors.red;
           optionsBackgroundColor[value[currentQuestionIndex].correctIndex] =
-              const Color(0xFF4b7c7a);
+              Colors.blue[400]!;
           selectedOptionsColor[selectedIndex] = Colors.white;
           selectedOptionsColor[value[currentQuestionIndex].correctIndex] =
               Colors.white;
         });
+        playWrongSound();
       }
-      Timer(const Duration(seconds: 1), () {
+      Timer(const Duration(milliseconds: 1500), () {
         gotoNextQuestion();
       });
     }).catchError((error) {
@@ -120,9 +132,9 @@ class _QuizScreenState extends State<QuizScreen> {
       appBar: AppBar(
         title: Text(
           '${currentQuestionIndex + 1}/${numberOfQuestions}',
-          style: const TextStyle(
+          style: TextStyle(
               fontSize: 18,
-              color: Color(0xFF4b7c7a),
+              color: Colors.blue[400]!,
               fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -186,11 +198,9 @@ class _QuizScreenState extends State<QuizScreen> {
                                           color: Colors.white,
                                           child: CircularProgressIndicator(
                                             value: seconds / 30,
-                                            valueColor:
-                                                const AlwaysStoppedAnimation(
-                                                    Color(0xFF4b7c7a)),
-                                            backgroundColor:
-                                                const Color(0xFFABD1C6),
+                                            valueColor: AlwaysStoppedAnimation(
+                                                Colors.blue[400]),
+                                            backgroundColor: Colors.blue[200],
                                             strokeWidth: 5,
                                           ),
                                         ),
